@@ -7,3 +7,6 @@ Techcare is a group of techies who are passionate about healthcare in the commun
 Here is the link to our drive documents
 
 https://drive.google.com/drive/folders/1GlXJMxWcyhGIQwJeuxLhYcJYm57jsnjJ
+
+A link for firebase integration
+https://console.firebase.google.com/project/jami-bora/overview?pli=1
