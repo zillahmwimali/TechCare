@@ -1,3 +1,6 @@
+import django_heroku
+import dj_database_url
+
 """
 Django settings for techcare project.
 
@@ -27,13 +30,17 @@ SECRET_KEY = 'django-insecure-psvk9_958cqal&5sph@x&^de6bfv0b7z=$ol@n*!+y6$=!z)jk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','jamii-bora.herokuapp.com']
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'registration',
+    # 'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'chw',
     'core',
+    'whitenoise.runserver_nostatic'
 ]
 # ACCOUNT_ACTIVATION_DAYS = 7
 # REGISTRATION_AUTO_LOGIN = True
@@ -56,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'techcare.urls'
@@ -82,12 +92,19 @@ WSGI_APPLICATION = 'techcare.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'TECHCARE',
+        'USER': 'TECHCAREuser',
+        'PASSWORD': 'techcare',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -125,6 +142,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
 
@@ -140,3 +158,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media/images/')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())

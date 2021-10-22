@@ -1,0 +1,1 @@
+web: gunicorn techcare.wsgi --log-file -
