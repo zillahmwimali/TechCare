@@ -1,18 +1,53 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/household.css'%}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous"
+  />
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}"/>
+    </head>
+
+    <title>Tech Care</title>
 </head>
 <body>
-    <header>
-    </header>
-    <body>
-       
-        {%block content%}
-        {% endblock %}
-    </body>
+
+  <div class="sidebar">
+    <img class="logo" src="{% static 'image/logo.png' %}" alt="">
+    <div class="sidebarOption active">
+      <span class="material-icons"> home </span>
+      <h2 >Households</h2>
+    </div>
+    <div class="sidebarOption">
+      <span class="material-icons"> assessment </span>
+      <h2>Assess</h2>
+    </div>
+
+    <div class="sidebarOption">
+      <span class="material-icons"> event_note </span>
+      <h2>Events</h2>
+    </div>
+
+    <div class="sidebarOption">
+      <span class="material-icons"> account_circle </span>
+      <h2>Profile</h2>
+    </div>
+    <a href = "{% url 'addHousehold' %}">
+      <button class="sidebar__add" >Add New</button>
+    </a>
+
+  </div>
+  
+    {%block content%}
+    {% endblock %}
+
+
 </body>
 </html>

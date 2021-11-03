@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'chw',
     'core',
+    'dashboard',
+    'phonenumber_field',
+
 ]
 # ACCOUNT_ACTIVATION_DAYS = 7
 # REGISTRATION_AUTO_LOGIN = True

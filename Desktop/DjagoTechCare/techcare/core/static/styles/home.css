@@ -142,7 +142,7 @@ section .title::after{
     background-color: rgb(12, 12, 155);
     color: whitesmoke;
     padding: 8px 14px;
-    border-radius: 12px;
+    border-radius: 6px;
 
 }
 .scroll-up-btn{
@@ -182,15 +182,13 @@ section .title::after{
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Nunito', sans-serif;
+    
 }
 .home .max-width{
   width: 100%;
   display: flex;
 }
-.chw{
-    margin-left: 250px;
 
-}
 .home .max-width .row{
   margin-right: 0;
 }
@@ -205,7 +203,7 @@ section .title::after{
 .icons {
     position: absolute;
     bottom: 5%;
-    left: 50%;
+    left: 45%;
     color: rgb(12, 12, 155);
 }
   
@@ -232,36 +230,17 @@ section .title::after{
     color: goldenrod;
     font-weight: 500;
 }
-.home .home-content a{
-    display: inline-block;
-    background: goldenrod;
-    color: #fff;
-    font-size: 25px;
-    font-weight: bold;
-    padding: 12px 36px;
-    margin-top: 20px;
-    font-weight: 400;
-    border-radius: 6px;
-    border: 2px solid goldenrod;
-    transition: all 0.3s ease;
-}
-.home .home-content a:hover{
-    color: goldenrod;
-    background: rgb(12, 12, 155);
-    border: 2px solid rgb(12, 12, 155);
 
-}
-
-@media (min-width: 481px) and (max-width: 1024px) {
-    body {
-        background-image: url('static/images/chw.jpg');
+@media (min-width: 481px) and (max-width: 1300px) {
+    .home {
+        background-image:url("/static/image/chw.jpg") no-repeat;
         background-size: cover;
     }
 }
 
 @media (min-width: 1025px) {
-    body {
-        background-image: url('static/images/chw.jpg');
+    .home {
+        background-image:url("/static/image/chw.jpg") no-repeat;
         background-size: cover;
 
    }
@@ -269,6 +248,12 @@ section .title::after{
 
 /* responsive media query start */
 @media (max-width: 1104px) {
+    .home{
+        background-image:url("/static/image/chw.jpg") no-repeat;
+        background-size: cover;
+
+
+    }
     .about .about-content .left img{
         height: 350px;
         width: 350px;
@@ -325,7 +310,7 @@ section .title::after{
     .icons {
         position: absolute;
         bottom: 5%;
-        left: 50%;
+        left: 45%;
         color: rgb(12, 12, 155);
       }
     .icons span {
@@ -361,7 +346,7 @@ section .title::after{
     .icons {
         position: absolute;
         bottom: 5%;
-        left: 50%;
+        left: 45%;
         color: rgb(12, 12, 155);
       }
 }
@@ -369,7 +354,7 @@ section .title::after{
 
 @media (max-width: 500px) {
     body{
-        background-image: url("static/images/chw.jpg");
+        background-image: url("static/image/chw.jpg");
         background-size: cover;
         background-attachment: fixed;
        
@@ -391,9 +376,140 @@ section .title::after{
     .icons {
         position: absolute;
         bottom: 5%;
-        left: 50%;
+        left: 45%;
         color: rgb(12, 12, 155);
       }
 }
 }
   
+
+
+
+.show-btn{
+    display: inline-block;
+    background: goldenrod;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid goldenrod;
+    transition: all 0.3s ease;
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
+  .container{
+    display: none;
+    width: 410px;
+    padding: 30px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: white;
+  padding: 4rem;
+  border-radius: 5px;
+  box-shadow: 2rem 2rem 2rem 35rem rgba(0, 0, 0, 0.6);
+  }
+.show-btn:hover{
+  color: goldenrod;
+  background: rgb(12, 12, 155);
+  border: 2px solid rgb(12, 12, 155);
+}
+  #show:checked ~ .container{
+    display: block;
+  }
+  .container .close-btn{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .container .close-btn:hover{
+    color: #112266;
+  }
+  .container .text{
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(12, 12, 155);
+  }
+  .container form{
+    margin-top: -20px;
+  }
+  .container form .data{
+    height: 45px;
+    width: 100%;
+    margin: 40px 0;
+  }
+  form .data label{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  form .data input{
+    width: 100%;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.3 ease;
+    background-color: white;
+    border: solid 1px #112266;
+    margin: 12px auto;
+  }
+  form .data input:focus{
+    background:#F1F1F1;
+    border-bottom-width: 2px;
+  }
+  form .forgot-pass{
+    margin-top: -8px;
+  }
+  form .forgot-pass a{
+    color: #112266;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  form .forgot-pass a:hover{
+    text-decoration: underline;
+  }
+  form .btn{
+    margin: 30px 0;
+    height: 45px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+
+  }
+  form .btn .inner{
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    z-index: -1;
+    background:  rgb(12, 12, 155);
+    transition: all 0.4s;
+  }
+  form .btn:hover .inner{
+    left: 0;
+  }
+  form .btn button{
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+

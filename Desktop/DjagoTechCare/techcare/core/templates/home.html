@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="icon" 
       type="image/png" 
-      href="{% static 'images/logo.png' %}"/>
+      href="{% static 'image/logo.png' %}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 </head>
 <body>
@@ -22,12 +22,12 @@
     </div>
     <nav class="navbar">
         <div class="max-width">
-            <div class="logo"><img class="logo-image" src="{% static 'images/logo.png' %}" alt="logo"><a href="#home">Tech<span>Care</span></a></div>
+            <div class="logo"><img class="logo-image" src="{% static 'image/logo.png' %}" alt="logo"><a href="#home">Tech<span>Care</span></a></div>
             <ul class="menu">
                 <li><a href="#blogs" class="menu-btn">BLOGS</a></li>
                 <li><a href="#contacts" class="menu-btn">CONTACTS</a></li>
                 <li><a href="#FAQs" class="menu-btn">FAQ</a></li>
-                <li><a href="{% url 'login' %}" class="menu-btn login">LOGIN</a></li>
+                <li><a href="" class="menu-btn login">LOGIN</a></li>
             </ul>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -36,14 +36,40 @@
     </nav>
 
     <!-- home section start -->
-    <section class="home" id="home">
+    <section class="home" id="home" style="background-image: url('static/image/chw.jpg');">
         <div class="max-width">
             <div class="home-content">
                 <div class="text-2">Best of care,</div>
                 <div class="text-2">Close to home.</span></div>
                 <div class="text-1">Always caring and always here.</div>
                 <div class="text-1">We are commited to serving our communities.</div>
-                <a href="#">Get started </a>
+                <div class="center">
+                    <input type="checkbox" id="show">
+                    <label for="show" class="show-btn">Get started</label>
+                    <div class="container">
+                       <label for="show" class="close-btn fas fa-times" title="close"></label>
+                       <div class="text">
+                          Login to get started
+                       </div>
+                       <form action="#">
+                          <div class="data">
+                             <label>Email</label>
+                             <input type="text" required>
+                          </div>
+                          <div class="data">
+                             <label>Password</label>
+                             <input type="password" required>
+                          </div>
+                          <div class="forgot-pass">
+                             <a href="#">Forgot Password?</a>
+                          </div>
+                          <div class="btn">
+                             <div class="inner"></div>
+                             <button type="submit">login</button>
+                          </div>
+                       </form>
+                    </div>
+                 </div>
             </div>
         </div>
         <div class="icons">
@@ -55,6 +81,9 @@
           </div>
 
     </section>
+   
+    
     <script src="{% static 'js/home.js'%}"></script>
+
 </body>
 </html>

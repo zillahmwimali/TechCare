@@ -47,4 +47,6 @@ new TypeIt("#type2", {
     .pause(500)
     .delete(9)
     .go();
-  
+
+
+
