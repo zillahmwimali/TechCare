@@ -1,0 +1,39 @@
+
+
+{% extends 'bases.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/register.css'%}">
+<center><h1 class="reg">List of Community Health Workers </h1></center>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+        <th>First Name</th>
+         <th>Last Name</th>
+         <th>Phone Number</th>
+         <th>ID Number</th>
+         <th>Gender</th>
+         <th>Region</th>
+         <th>Edit CHW</th>
+         <th>Delete CHW</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for chw in chws %}
+        <tr>
+        <td>{{chw.first_name}}</td>
+        <td>{{chw.last_name}}</td>
+        <td>{{chw.phone_number}}</td>
+        <td>{{chw.ID_number}}</td>
+        <td>{{chw.gender}}</td>
+        <td>{{chw.region_or_location}}</td>
+        <td> <button><a href="{% url 'edit_chw' id=chw.id %}">Edit CHW</a></button></td>
+        <td> <button><a href="{% url 'delete_chw' id=chw.id %}">Delete CHW</a></button></td>
+    </tr>
+    </tbody>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
