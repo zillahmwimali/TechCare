@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    
+
+    <!-- feed starts -->
+    <div class="feed">
+      <div class="feed__header">
+        <h2>My households</h2>
+      </div>
+      <!-- post starts -->
+      {% for household in households %}
+      <div class="post">
+        <div class="post__avatar">
+          <img
+            src="https://www.pngkit.com/png/full/591-5917879_a-superior-photobooth-yellow-family-icon.png"
+            alt=""
+          />
+        </div>
+     
+        <div class="post__body">
+          <div class="post__header">
+            <div class="post__headerText">
+              <h3>
+                <a href = "" style="text-decoration: none;color: #112266;" >{{ household.contact_person_first_name }}'s Household</a>
+                
+                
+              </h3>
+              <p>
+                {{ household.number_of_household_members }} members
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </a>
+ </div>
+{% endblock %}

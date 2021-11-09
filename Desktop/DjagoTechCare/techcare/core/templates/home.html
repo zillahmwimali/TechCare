@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamii Bora</title>
+    <link rel="stylesheet" href="{% static 'styles/home.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="icon" 
+      type="image/png" 
+      href="{% static 'image/logo.png' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+</head>
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><img class="logo-image" src="{% static 'image/logo.png' %}" alt="logo"><a href="#home">Tech<span>Care</span></a></div>
+            <ul class="menu">
+                <li><a href="#blogs" class="menu-btn">BLOGS</a></li>
+                <li><a href="#contacts" class="menu-btn">CONTACTS</a></li>
+                <li><a href="#FAQs" class="menu-btn">FAQ</a></li>
+                <li><a href="" class="menu-btn login">LOGIN</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- home section start -->
+    <section class="home" id="home" style="background-image: url('static/image/chw.jpg');">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-2">Best of care,</div>
+                <div class="text-2">Close to home.</span></div>
+                <div class="text-1">Always caring and always here.</div>
+                <div class="text-1">We are commited to serving our communities.</div>
+                <div class="center">
+                    <input type="checkbox" id="show">
+                    <label for="show" class="show-btn">Get started</label>
+                    <div class="container">
+                       <label for="show" class="close-btn fas fa-times" title="close"></label>
+                       <div class="text">
+                          Login to get started
+                       </div>
+                       <form action="#">
+                          <div class="data">
+                             <label>Email</label>
+                             <input type="text" required>
+                          </div>
+                          <div class="data">
+                             <label>Password</label>
+                             <input type="password" required>
+                          </div>
+                          <div class="forgot-pass">
+                             <a href="#">Forgot Password?</a>
+                          </div>
+                          <div class="btn">
+                             <div class="inner"></div>
+                             <button type="submit">login</button>
+                          </div>
+                       </form>
+                    </div>
+                 </div>
+            </div>
+        </div>
+        <div class="icons">
+            <p style="color: black;">Connect with us</p>
+            <span><i class="fab fa-facebook-f"></i></span> 
+            <span><i class="fab fa-twitter"></i></span>
+            <span><i class="fab fa-instagram"></i></span>
+
+          </div>
+
+    </section>
+   
+    
+    <script src="{% static 'js/home.js'%}"></script>
+
+</body>
+</html>
