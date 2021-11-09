@@ -13,4 +13,4 @@ A link to the documentation (Mkdocs)
 https://babrakoskei.github.io/MKdocs--TechCare-project/
 
 A link to the End-User Documentation
-https://bit.ly/3mXiBi
+https://bit.ly/3BAIlEN 
