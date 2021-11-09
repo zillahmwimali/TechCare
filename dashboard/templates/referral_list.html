@@ -1,0 +1,38 @@
+
+
+{% extends 'bases.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/register.css'%}">
+<center><h1 class="reg">List of referrals </h1></center>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+        <th>Household</th>
+        <th>First Name</th>
+         <th>Last Name</th>
+         <th>Home area</th>
+         <th>Hospital name</th>
+         <th>Condition</th>
+         <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for referral in referrals %}
+        <tr>
+        <td style="color: rgb(139, 9, 9);">{{referral.referree}}'s Household</td>
+        <td>{{referral.patients_first_name}}</td>
+        <td>{{referral.patients_last_name}}</td>
+        <td>{{referral.home_area}}</td>
+        <td>{{referral.hospital_name}}</td>
+        <td>{{referral.condition}}</td>
+        <td>{{referral.brief_description_of_the_condition }}</td> 
+    </tr>
+
+    </tbody>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

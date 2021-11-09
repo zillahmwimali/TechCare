@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    
+
+<div class="sortHous">
+  <!-- sort starts -->
+  <div
+   class="sorthouse"
+  >
+  <a href="{% url 'household' %}" style="text-decoration: none;  color: inherit;">
+    <p>All</p>
+  </a>
+  </div>
+  
+  <div
+   class="sorthouse"
+  >
+    <p> Visited</p>
+  </div>
+  <div
+   class="sorthouse"
+  >
+  <a href="{% url 'follow_up' %}" style="text-decoration: none;  color: inherit;">
+    <p>Follow up</p>
+  </a>
+  </div>
+  <div
+   class="sorthouse"
+  >
+    <p>Family planning</p>
+  </div>
+  <!-- sort ends -->
+
+ 
+</div>
+           <!-- house starts -->
+        {% for household in households %}
+        <div class="house">
+          <div class="house__top">
+            <img 
+            class="user__avatar"
+            src="https://www.pngkit.com/png/full/591-5917879_a-superior-photobooth-yellow-family-icon.png"
+            alt=""
+          />
+            <div class="post__topInfo">
+                <h3> {{ household.contact_person_first_name }}'s Household </h3>
+                <p>{{ household.number_of_household_members }}members</p>
+              </div>
+          </div>
+
+          <div class="house__bottom">
+            <div class="house__option">
+              <span style="color: gray" class="material-icons"> edit</span>
+              <a href="{% url 'edit_household' id=household.id %}" style="text-decoration: none; color: inherit;" >
+              <h3>Edit Household</h3></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+{% endblock %}
