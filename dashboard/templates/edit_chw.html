@@ -1,0 +1,21 @@
+
+
+{% extends 'bases.html' %}
+{% block content %}
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'css/register.css'%}">
+
+        <center><h1 class="reg">Edit Community Health Worker Details </h1></center>
+        <div class="fomu">
+          <form method="POST">
+              {% csrf_token %}
+              <img class="pic" src="https://www.clipartmax.com/png/middle/261-2615611_community-health-worker-logo.png">
+              <hr>
+              {{form.as_p}}
+              <center><button class="button"><span>Submit </span></button></center>
+            </form>
+      </div>
+
+{% endblock %}
