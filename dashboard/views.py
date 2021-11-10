@@ -1,9 +1,10 @@
 from django.shortcuts import render,redirect
 from chw.models import Chw, Households,Referral
-from .forms import ChwRegistrationForm
+from .forms import ChwRegistrationForm, EditProfileForm
 from django.contrib import messages
 from django.db.models import Sum
 from django.http import JsonResponse
+from .models import OrgProfile
 
 
 def calendar(request):
@@ -69,3 +70,18 @@ def totals(request):
 def referral_list(request):
     referrals = Referral.objects.all()
     return render(request,'referral_list.html',{'referrals': referrals})
+
+def edit_profile(request):
+    if request.method=="POST":
+        forms=EditProfileForm(request.POST,request.FILES)
+        if forms.is_valid():
+            forms.save()
+            
+            return redirect("dashboard")
+        else:
+            print(forms.errors)
+
+    else:
+        forms=EditProfileForm()
+    return render(request,"edit_profile.html",{"form":forms})
+
