@@ -85,3 +85,10 @@ def edit_profile(request):
         forms=EditProfileForm()
     return render(request,"edit_profile.html",{"form":forms})
 
+
+def share(request):
+    return render(request,'share.html') 
+
+
+def stats(request):
+    return render(request,'analytics.html') 

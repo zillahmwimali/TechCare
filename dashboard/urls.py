@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import totals
-from .views import register_chw,chw_list,edit_chw,delete_chw,calendar,household_list,delete_household,referral_list, edit_profile
+from .views import stats, totals
+from .views import register_chw,chw_list,edit_chw,delete_chw,calendar,household_list,delete_household,referral_list, edit_profile,share
 
 
 urlpatterns = [
@@ -15,4 +15,6 @@ urlpatterns = [
     path('delete_household/<int:id>/',delete_household,name='delete_household'),
     path('referral_list/',referral_list, name = 'referral_list'),
     path('editprofile/',edit_profile,name='editprofile'),
+    path('share/',share,name='share'),
+    path('stats/',stats,name='stats'),
 ]
