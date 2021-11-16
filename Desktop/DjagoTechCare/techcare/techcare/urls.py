@@ -24,6 +24,8 @@ urlpatterns = [
     path ('chw/',include('chw.urls')),
     path ('dashboard/',include('dashboard.urls')),
     path ('event/',include('event.urls')),
+    path ('contact/',include('contact.urls')),
+
 
     
 
