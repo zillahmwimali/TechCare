@@ -7,9 +7,6 @@ from django.http import JsonResponse
 from .models import OrgProfile
 
 
-def calendar(request):
-    return render(request,'calendar.html') 
-
 def register_chw(request):
     if request.method == "POST":
         form = ChwRegistrationForm(request.POST, request.FILES)

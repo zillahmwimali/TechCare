@@ -1,12 +1,11 @@
 from django.urls import path
 from .views import totals
-from .views import register_chw,chw_list,edit_chw,delete_chw,calendar,household_list,delete_household,referral_list, edit_profile
+from .views import register_chw,chw_list,edit_chw,delete_chw,household_list,delete_household,referral_list, edit_profile
 
 
 urlpatterns = [
 
     path('dashboard/',totals, name='dashboard'),
-    path('calendar/',calendar, name='calendar'),
     path('register_chw/',register_chw, name= 'register_chw'),
     path('chw_list/',chw_list, name = 'chw_list'),
     path('household_list/',household_list, name = 'household_list'),
