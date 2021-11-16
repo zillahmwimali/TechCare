@@ -19,19 +19,6 @@ from django.urls import reverse
 #         'labels': labels,
 #         'data': data,
 #     })
-def pie_chart(request):
-    labels = []
-    data = []
-
-    queryset = Households.objects.order_by('-household_area')[:1]
-    for households in queryset:
-        labels.append(households.number_of_household_members)
-        data.append(households.number_of_newborns)
-
-    return render(request, 'analytics.html', {
-        'labels': labels,
-        'data': data,
-    })
 
 def addHousehold(request):
 
