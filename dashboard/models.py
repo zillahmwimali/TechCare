@@ -11,4 +11,7 @@ class OrgProfile(models.Model):
 
     def __str__(self):
         return self.organisation_name
+
+
+
 # Create your models here.
