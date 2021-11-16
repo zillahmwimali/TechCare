@@ -25,7 +25,7 @@
             <div class="logo"><img class="logo-image" src="{% static 'image/logo.png' %}" alt="logo"><a href="#home">Tech<span>Care</span></a></div>
             <ul class="menu">
                 <li><a href="#blogs" class="menu-btn">BLOGS</a></li>
-                <li><a href="#contacts" class="menu-btn">CONTACTS</a></li>
+                <li><a href="{% url 'contact:contact'%}" class="menu-btn">CONTACTS</a></li>
                 <li><a href="#FAQs" class="menu-btn">FAQ</a></li>
                 <li><a href="" class="menu-btn login">LOGIN</a></li>
             </ul>
