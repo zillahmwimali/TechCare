@@ -1,53 +1,171 @@
-{% load static %}
+{%load static%}
+
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/household.css'%}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechCare</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Nunito+Sans&family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
     crossorigin="anonymous"
   />
-    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}"/>
-    </head>
-
-    <title>Tech Care</title>
-</head>
-<body>
-
-  <div class="sidebar">
-    <img class="logo" src="{% static 'image/logo.png' %}" alt="">
-    <div class="sidebarOption active">
-      <span class="material-icons"> home </span>
-      <h2 >Households</h2>
-    </div>
-    <div class="sidebarOption">
-      <span class="material-icons"> assessment </span>
-      <h2>Assess</h2>
-    </div>
-
-    <div class="sidebarOption">
-      <span class="material-icons"> event_note </span>
-      <h2>Events</h2>
-    </div>
-
-    <div class="sidebarOption">
-      <span class="material-icons"> account_circle </span>
-      <h2>Profile</h2>
-    </div>
-    <a href = "{% url 'addHousehold' %}">
-      <button class="sidebar__add" >Add New</button>
+  </head>
+  <body>
+    <!-- bottom nav nav -->
+    <nav class="feeds-nav dark-mode-1">
+      <div class="icons">
+        <a href="{% url 'household' %}" class="active"><i class="fas fa-home"></i></a>
+        <a href="#"><i class="fas fa-file-alt"></i></a>
+        <a href="#"><i class="far fa-calendar-alt"></i></a>
+      </div>
+     
+      <!-- chw profile navbar -->
+      <div class="user">
+        <div class="user-img-wrapper">
+          <img src="https://www.worldbank.org/content/dam/Worldbank/Feature%20Story/Africa/afr-levelling-the-field-improving-opportunities-for-women-farmers-in-africa-735x490.jpg" />
+        </div>
+      </div>
+    </nav>
+    <a href="{% url 'addHousehold' %}" style="text-decoration: none;  color: inherit;">
+    <button type="button" class="post-bton"  >
+      <i class="fas fa-plus"></i> Add
+    </button>
     </a>
+    <!-- end of bottom  nav -->
 
-  </div>
 
+
+      <!-- chw profile modal -->
+      <div class="side-wrapper">
+        <div class="side dark-mode-1">
+          <div class="side-header border">
+            <h2 class="light-text">Account info</h2>
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="side-user">
+            <div class="side-user-img">
+              <img src="https://www.worldbank.org/content/dam/Worldbank/Feature%20Story/Africa/afr-levelling-the-field-improving-opportunities-for-women-farmers-in-africa-735x490.jpg" />
+            </div>
+          </div>
+          <div class="side-user-info light-text">
+            <h4>Joyce Wangeci</h4>
+            <p>Community Health Worker</p>
+          </div>
+          <div class="following light-text">
+            <p class="following-paragraph"><span>100</span> Households</p>
+          </div>
+          <div class="dark-mode-1 border">
+            <ul>
+              <li>
+                <a href="#"> <i class="far fa-bell"></i> Notifications </a>
+              </li>
+              <li>
+                <a href="#"> <i class="fas fa-question-circle"></i> Get help </a>
+              </li>
+              <li>
+                <a href="#"> <i class="fas fa-share-alt"></i> Share our app </a>
+              </li>
+              <li>
+                <a href="#"> <i class="fas  fa-sign-out-alt"></i>Logout </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- dark mode -->
+          <div class="dark-mode">
+            <p>Dark Mode</p>
+            <div class="toggle">
+              <div class="circle"></div>
+            </div>
+          </div>
+
+          <!-- end of dark mode -->
+        </div>
+      </div>
+      <!-- end of side -->
+
+
+
+
+    <!-- header starts -->
+    <div class="header">
+      <div class="header__middle">
+        <div class="header__option">
+          <h1>
+            My Households
+        </h1> 
+        <!-- <div class="header__input">
+            <span class="material-icons"> search </span>
+            <input type="text" placeholder="Search Households" />
+          </div>       -->
+        </div>
+    
+      </div>
+      </div>
+ 
+    <!-- header ends -->
+
+    <!-- main body starts -->
+    <div class="main__body">
+      <!-- sidebar starts -->
+      <div class="sidebar">
+        <img class="logo" src="{% static 'images/logo.png' %}" alt="">
+
+
+        <a href="{% url 'household' %}" style="text-decoration: none;  color: inherit;">
+          <div class="sidebarRow">
+            <span class="material-icons" style="font-size: xx-large;"> home </span>
+            <h4>Households </h4>
+          </div>
+        </a>
+
+       
+
+        <div class="sidebarRow">
+          <span class="material-icons" style="font-size: xx-large;"> assessment </span>
+          <h4> Assess </h4>
+        </div>
+
+        <div class="sidebarRow">
+          <span class="material-icons" style="font-size: xx-large;"> event_note </span>
+          <h4> Event </h4>
+        </div>
+
+        <div class="sidebarRow" >
+          <span class="material-icons" style="font-size: xx-large;"> account_circle </span>
+          <h4> Profile</h4>
+        </div>
+
+        <button type="button" class="post-btn">
+           <a href="{% url 'addHousehold' %}" style="text-decoration: none;  color: inherit;">
+            <i class="fas fa-plus"></i> Add
+           </a> 
+          </button>
+      </div>
+      <!-- sidebar ends -->
+
+
+      <!-- sort starts -->
+      <div class="feed">
+  
+      
     {%block content%}
     {% endblock %}
+      
+      </div>
+      <!-- feed ends -->
+      </div>
+      <script src="{% static 'js/base.js' %}"></script>
 
-
-</body>
+  </body>
 </html>
+
+

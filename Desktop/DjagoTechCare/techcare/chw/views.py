@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
-from .models import Households
-from .forms import HouseholdRegistrationForm
+from .models import Households,Referral
+from .forms import HouseholdRegistrationForm,ReferralRegistrationForm
 from django.contrib import messages
+from django.urls import reverse             
+
 
 
 def addHousehold(request):
@@ -25,15 +27,55 @@ def chwHouseholds(request):
     return render(request, 'household.html', {'households': households})
 
 
-def edit_household(request, id):
+def edit_household(request,id):
     household = Households.objects.get(id=id)
-    if request.method == 'POST':
-        form = HouseholdRegistrationForm(request.POST, instance=household)
+    if request.method=='POST':
+        form = HouseholdRegistrationForm(request.POST,instance = household )
         if form.is_valid():
             form.save()
+            return redirect('household')
+
     else:
-        form = HouseholdRegistrationForm(instance=household)
-        return render(request, 'edit_household.html', {'form': form})
+        form = HouseholdRegistrationForm(instance = household )
+        return render(request,'edit_household.html',{'form':form}) 
+def refer(request):
+
+    if request.method == "POST":
+        form = ReferralRegistrationForm(request.POST, request.FILES)
+        if form.is_valid():
+            messages.success(request,'Successfully reffered' + str(Referral.patients_first_name))
+            form.save()
+            return redirect('follow_up')
+        else:
+            print (form.errors)
+    else:
+        form = ReferralRegistrationForm()
+    return render(request,'referral.html',{'form':form})
+
+def follow_up(request):
+    referrees = Referral.objects.all()
+    return render(request,'follow_up.html',{'referrees': referrees})
+
+
+def delete_referree(request,id):
+    referral = Referral.objects.get(id=id)
+    referral.delete()
+    return redirect(reverse('follow_up'))
+
+
+
+def edit_referral(request,id):
+    referral = Referral.objects.get(id=id)
+    if request.method=='POST':
+        form = ReferralRegistrationForm(request.POST,instance = referral )
+        if form.is_valid():
+            form.save()
+            return redirect('follow_up')
+
+    else:
+        form = ReferralRegistrationForm(instance = referral )
+    return render(request,'edit_referral.html',{'form':form}) 
+
 
 
 def assessments(request):

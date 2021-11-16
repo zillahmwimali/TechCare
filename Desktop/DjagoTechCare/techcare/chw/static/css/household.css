@@ -210,4 +210,8 @@
     font-size: 18px;
     font-weight: 800;
   }
-  
+
+  @supports (-webkit-overflow-scrolling: touch) {
+    /* Installed PWAs on mobile Apple devices */
+    
+  }

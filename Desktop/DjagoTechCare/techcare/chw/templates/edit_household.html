@@ -70,7 +70,18 @@ select {
 }
 label{
 font-size: 20px;    
+}textarea{
+    width: 100%;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.3 ease;
+    background-color: white;
+    border: solid 1px #112266;
+    margin: 12px auto;
+
 }
+
 input{
     width: 100%;
     outline: none;
@@ -123,9 +134,8 @@ input:focus{
     color: #112266;
 }
 </style>
-<div class="feed">
     <div class="feed__header">
-      <h2>Add Household</h2>
+      <h2>Edit Household</h2>
     </div>
 
     <div class="fomu">
@@ -137,7 +147,5 @@ input:focus{
         </form>
 
   </div>
-
-</div>
 
 {% endblock %}
