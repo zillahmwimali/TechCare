@@ -1,7 +1,10 @@
 from django.shortcuts import render,redirect
-from chw.models import Chw, Households
-from .forms import ChwRegistrationForm
+from chw.models import Chw, Households,Referral
+from .forms import ChwRegistrationForm, EditProfileForm
 from django.contrib import messages
+from django.db.models import Sum
+from django.http import JsonResponse
+from .models import OrgProfile
 
 
 def calendar(request):
@@ -32,6 +35,8 @@ def edit_chw(request,id):
         form = ChwRegistrationForm(request.POST,instance = chw)
         if form.is_valid():
             form.save()
+            return redirect('chw_list')
+
     else:
         form = ChwRegistrationForm(instance = chw)
         return render(request,'edit_chw.html',{'form':form})        
@@ -56,6 +61,27 @@ def delete_household(request,id):
 def totals(request):
     total_chws = Chw.objects.count()
     total_households = Households.objects.count()
-    data = {"total_chws":total_chws,"total_households":total_households}
+    total_referrals = Referral.objects.count()
+    data = {"total_chws":total_chws,"total_households":total_households,"total_referrals":total_referrals}
 
     return render(request,'dashboard.html',data)
+
+
+def referral_list(request):
+    referrals = Referral.objects.all()
+    return render(request,'referral_list.html',{'referrals': referrals})
+
+def edit_profile(request):
+    if request.method=="POST":
+        forms=EditProfileForm(request.POST,request.FILES)
+        if forms.is_valid():
+            forms.save()
+            
+            return redirect("dashboard")
+        else:
+            print(forms.errors)
+
+    else:
+        forms=EditProfileForm()
+    return render(request,"edit_profile.html",{"form":forms})
+

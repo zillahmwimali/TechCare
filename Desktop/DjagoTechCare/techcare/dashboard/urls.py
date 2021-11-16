@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import totals
-from .views import register_chw,chw_list,edit_chw,delete_chw,calendar,household_list,delete_household
-
+from .views import register_chw,chw_list,edit_chw,delete_chw,calendar,household_list,delete_household,referral_list, edit_profile
 
 
 urlpatterns = [
@@ -14,5 +13,6 @@ urlpatterns = [
     path('edit_chw/<int:id>/',edit_chw,name='edit_chw'),
     path('delete_chw/<int:id>/',delete_chw,name='delete_chw'),
     path('delete_household/<int:id>/',delete_household,name='delete_household'),
-
+    path('referral_list/',referral_list, name = 'referral_list'),
+    path('editprofile/',edit_profile,name='editprofile'),
 ]
