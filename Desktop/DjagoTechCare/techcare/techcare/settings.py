@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'dashboard',
     'phonenumber_field',
     'event',
+    'contact',
+
 
 ]
 # ACCOUNT_ACTIVATION_DAYS = 7
