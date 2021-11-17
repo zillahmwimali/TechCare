@@ -1,0 +1,222 @@
+{% include 'base.html' %}
+{% load static %}
+ 
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+   <title>EVENTS</title>
+   <style>
+      @import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
+ 
+form{
+ margin-left: 100px;
+ width: 700px;
+ border-radius: 20px;
+ padding: 40px;
+ box-sizing: border-box;
+ background: #f0ecf3;
+ box-shadow: 14px 14px 20px #cfcbd1, -14px -14px 20px white;
+}
+label, input, button {
+ display: block;
+ width: 100%;
+ padding: 0;
+ border: none;
+ outline: none;
+ box-sizing: border-box;
+}
+label {
+ margin-bottom: 4px;
+}
+ 
+ 
+input::placeholder {
+ color: rgb(128, 128, 128);
+}
+ 
+input {
+ background: #f1ecf3;
+ padding-left: 10px;
+ height: 40px;
+ font-size: 14px;
+ border-radius: 10px;
+ box-shadow: inset 6px 6px 6px #cfcbd1, inset -6px -6px 6px white;
+}
+ 
+select{
+ background: #f0ecf3;
+ padding-left: 10px;
+ height: 40px;
+ font-size: 14px;
+ border-radius: 10px;
+ box-shadow: inset 6px 6px 6px #cecbd1, inset -6px -6px 6px white; 
+}
+ 
+button {
+ font-size: 20px;
+ background: #112266;
+ height: 40px;
+ color: whitesmoke;
+ border-radius: 10px;
+ cursor: pointer;
+ margin-right: 120px;
+ font-weight: 900;
+ box-shadow: 6px 6px 6px #cfcbd1, -6px -6px 6px white;
+ transition: 0.5s;
+}
+button:hover {
+    box-shadow: none;
+   }
+   h1 {
+   text-align: center;
+   }
+    #des{
+   background: #f1ecf3;
+   width: 100%;
+   padding-left: 10px;
+   height: 100px;
+   font-size: 14px;
+   border: none;
+   border-radius: 10px;
+   box-shadow: inset 6px 6px 6px #cfcbd1, inset -6px -6px 6px white;
+       
+    }
+    .reg{
+      margin-left: 15%;
+      margin-top: -28%;
+    
+    }
+    .event-image{
+      margin-left: 30px;
+    }
+    .footer {
+      height: max-content;
+      margin-top: 50px;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #112266;;
+      color: white;
+    
+   
+    }
+ .footer-msg{
+  text-align: center;
+  color: white;
+  margin-top: 70px;
+ }
+ .ftr{
+  display: block;
+  padding: 20px;
+  padding-left: 150px;
+  border-spacing: 220px 1px ;
+ }
+ .ftr a{
+     list-style: none;
+     color: white;
+     text-decoration: underline dotted white;
+
+}
+.ftr li{
+ list-style: none;
+}
+.icons {
+
+bottom: -109%;
+left: 45%;
+color: white;
+}
+
+.icons span:not(:last-child) {
+margin-right: 1rem;
+}
+
+.icons span {
+font-size: 2rem;
+cursor: pointer;
+transition: all 300ms ease-in-out;
+}
+
+.icons span:hover {
+color: #dd9a05;
+}
+
+      </style>
+   </head>
+   <body>
+      <table class="reg">
+          <tr>
+              <td>
+                  <div class="event-image"><img style="width: 450px; height:500px; " src="https://i.pinimg.com/originals/49/e7/80/49e7800d6828dbf1abbb89c9f42a1f75.png" alt="logo"></div>
+    
+              </td>
+              <td>
+                  <form method="POST"  novalidate name="forms" enctype="multipart/form-data">
+   <h1 style="color: #112266;">Community Health Worker Events Registration Form</h1>
+                        {% csrf_token %}
+                        {{form.as_p}} 
+                        <button type="submit">Submit</button>
+                    </form>
+      
+                </td>
+            </tr>
+        </table>
+        <div class="footer">
+          <table class="ftr">
+              <tr>
+                  <td>
+                    <div class="company">
+                        <h1 style="font-size: 18px;">Our Company</h1>
+                        <ul>
+                            <a href="#"><li>About Us</li></a>
+                            <a href="#"><li>Blogs</li></a>
+                            <a href="#"><li>User Manual</li></a>
+                            <a href="#"><li>Get the App</li></a>
+                        </ul>
+                    </div>
+                  </td>
+                  <td>
+                    <h1 style="font-size: 18px;">Legal</h1>
+                    <ul>
+                        <a href="#"><li>Privacy Policy</li></a>
+                        <a href="#"><li>Terms & conditions</li></a>
+                        <a href="#"><li>Suppory</li></a>
+                        <a href="#"><li>FAQs</li></a>
+                    </ul>
+                  </td>
+                  <td>
+                    <h1 style="font-size: 18px;">Contact Information</h1>
+                    <ul>
+                       <li> <i class="fas fa-phone-square-alt"></i>    +254739 520 062</li>
+                      <li><i class="fas fa-envelope-open-text"></i>   
+                        techcarechw@gmail.com</li>
+                       <li><i class="fas fa-globe"></i>     www.techcare.co.ke</li>
+                        <li> <i class="fas fa-map-marker-alt"></i>    Karen,Nairobi</li>
+                    </ul>
+                  </td>
+              </tr>
+          </table>
+
+          <div class="icons">
+            <p style="color: #dd9a05;">Connect with us</p>
+            <span><i class="fab fa-facebook-f"></i></span> 
+            <span><i class="fab fa-twitter"></i></span>
+            <span><i class="fab fa-instagram"></i></span>
+
+          </div>
+       
+
+        <p class="footer-msg">Copyright © 2021 TechCare All rights reserved</p>
+      </div>
+     </body>
+     </html>
+      
+      
+     
+        
