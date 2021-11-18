@@ -1,0 +1,22 @@
+<div class="fomu">
+
+    {% if messages %}
+        {% for message in messages %}
+        <div>
+<!--                | means OR operator-->
+            <center><h1 class="reg">{{message|safe}} <a href="/organization" style="color:blue;">Retry</a></h1></center>
+        </div>
+        {% endfor %}
+    {% else %}
+    {{order}}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label class="upload" for="file1"> Upload you organization file</label>
+        <input type="file" id="file1" name="file">
+        <small>Ensure its CSV files</small>
+        <button class="button" type="submit">Upload</button>
+    </form>
+    {% endif %}
+    {% for orgs in org %}
+    {% endfor %}
+</div>

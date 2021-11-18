@@ -35,18 +35,7 @@ $(document).ready(function(){
 
 
 });
-new TypeIt("#type2", {
-    speed: 120,
-    loop: true,
-    waitUntilVisible: true,
-  })
-    .type("Learn continually,", { delay: 400 })
-    .pause(500)
-    .delete(18)
-    .type("There's always 'one more thing' to learn", { delay: 400 })
-    .pause(500)
-    .delete(9)
-    .go();
+
 
 
 

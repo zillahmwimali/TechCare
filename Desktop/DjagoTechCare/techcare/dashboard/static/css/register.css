@@ -121,3 +121,34 @@ input:focus{
     font-weight: bold;
     color: #112266;
 }
+.upload{
+    font-size: 18px;
+    color: #112266;
+}
+.pie{
+    font-size: 17px;
+    padding:40px ;
+    width:52%;
+    height:auto;
+    overflow:hidden;
+    background-color: white;
+    border-radius:5px;
+    box-shadow:0px 0px 5px 0px gray;
+    margin: 10px auto;
+  }
+.analytics{
+    font-size: 17px;
+    padding:40px ;
+    width:95%;
+    height:auto;
+    overflow:hidden;
+    background-color: white;
+    border-radius:5px;
+    box-shadow:0px 0px 5px 0px gray;
+    margin: 10px auto;
+  }
+iframe{
+    margin-left: 150px;
+    width: 70%;
+    height: 600px;
+}

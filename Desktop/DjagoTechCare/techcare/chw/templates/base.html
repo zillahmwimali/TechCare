@@ -16,7 +16,10 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
     crossorigin="anonymous"
-  />
+    />
+    <link rel="icon" 
+        type="image/png" 
+        href="{% static 'images/logo.png' %}"/>
   </head>
   <body>
     <!-- bottom nav nav -->
@@ -40,8 +43,6 @@
     </button>
     </a>
     <!-- end of bottom  nav -->
-
-
 
       <!-- chw profile modal -->
       <div class="side-wrapper">
@@ -102,6 +103,10 @@
           <h1>
             My Households
         </h1> 
+        <!-- <div class="header__input">
+            <span class="material-icons"> search </span>
+            <input type="text" placeholder="Search Households" />
+          </div>       -->
         </div>
     
       </div>
@@ -124,16 +129,17 @@
         </a>
 
        
-
+        <a href="{% url 'general_assessment' %}" style="text-decoration: none;  color: inherit;">
         <div class="sidebarRow">
           <span class="material-icons" style="font-size: xx-large;"> assessment </span>
           <h4> Assess </h4>
         </div>
-        <a href="{% url 'event:calendar' %}">
+        </a>
+
         <div class="sidebarRow">
-     <span class="material-icons" style="font-size: xx-large;"> event_note </span>
-     <h4> Event </h4>
-        </div></a>
+          <span class="material-icons" style="font-size: xx-large;"> event_note </span>
+          <h4> Event </h4>
+        </div>
 
         <div class="sidebarRow" >
           <span class="material-icons" style="font-size: xx-large;"> account_circle </span>

@@ -1,6 +1,5 @@
-from django.conf.urls import url
 from django.urls import path
-from .views import child_assess, chwHouseholds,addHousehold,edit_household,assessments, general_assessment, new_household,referrals,followUp,refer,follow_up,delete_referree,edit_referral,new_household,child_assess,mother_assess
+from .views import child_assess, chwHouseholds,addHousehold,edit_household,general_assess,refer,follow_up,delete_referree,edit_referral,child_assess,mother_assess,refer_mother
 
 urlpatterns = [
     path('household/',chwHouseholds,name='household'),
@@ -10,10 +9,11 @@ urlpatterns = [
     path('follow_up/',follow_up,name='follow_up'),
     path('delete_ref/<int:id>/',delete_referree,name='delete_ref'),
     path('edit_referral/<int:id>/' , edit_referral, name = 'edit_referral'),
-    path('general_assessment/',general_assessment,name='general_assessment'),
+    path('general_assessment/',general_assess,name='general_assessment'),
     path('child_assess/',child_assess,name='child_assess'),
     path('mother_assess/',mother_assess,name='mother_assess'),
-    path('patient_assessments/',assessments,name='patient_assessments'),
+    path('refer_mother/',refer_mother,name='refer_mother'),
+
 
 ]
 

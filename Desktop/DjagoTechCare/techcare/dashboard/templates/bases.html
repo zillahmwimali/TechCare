@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="{% static 'css/bases.css'%}">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" 
+      type="image/png" 
+      href="{% static 'images/logo.png' %}"/>
    </head>
 <body>
   <div class="sidebar">
@@ -45,17 +48,30 @@
           </a>
         </li>
         <li>
-          <a href="/dashboard/referral_list">
+          <a href="{% url 'referral_list' %}">
             <i class='bx bx-arrow-from-left' ></i>
             <span class="links_name">Referrals</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{% url 'analytics' %}">
             <i class='bx bx-pie-chart-alt-2' ></i>
             <span class="links_name">Analytics</span>
           </a>
         </li>
+        <li>
+          <a href="{% url 'support' %}">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Support</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-adjust' ></i>
+            <span class="links_name">Light mode</span>
+          </a>
+        </li>
+
         <li class="log_out">
           <a href="#">
             <i class='bx bx-log-out'></i>
@@ -63,39 +79,24 @@
           </a>
         </li>
       </ul>
+
   </div>
+
   <section class="home-section">
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Hello Kimberly</span>
+        <span class="dashboard">LungaLunga Hospital</span>
       </div>
       <div class="search-box">
         <input type="text" placeholder="Search...">
         <i class='bx bx-search' ></i>
       </div>
-      <!-- <div class="profile-details">
+      <div class="profile-details">
         <img src="images/profile.jpg" alt="">
-        <span class="admin_name">Kimberly Jones</span>
+        <span class="admin_name">LungaLunga</span>
         <i class='bx bx-chevron-down' ></i>
-      </div> -->
-
-      <ul class="profile-wrapper">
-        <li>
-          <!-- user profile -->
-          <div class="profile">
-            <!-- <img src="http://gravatar.com/avatar/0e1e4e5e5c11835d34c0888921e78fd4?s=80" /> -->
-            <h4>Kimberly</h4>
-            
-            <!-- more menu -->
-            <ul class="menu">
-              <li><a href="/dashboard/editprofile/">Edit Profile</a></li>
-              <li><a href="#">Change Theme</a></li>
-              <li><a href="#">Log out</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+      </div>
     </nav>
     
 
@@ -107,93 +108,7 @@
     </div>
   </section>
  <script src="{% static 'js/bases.js' %}"></script>
-<style>
-   ul, li {
-	list-style:none;
-	padding:0;
-	margin:0;
-}
-a {text-decoration:none;}
 
-.profile-wrapper {
-	width:200px;
-	position:relative;
-	margin:50px auto;
-}
-.profile-wrapper::after {
-	content: '';
-	position: absolute;
-	top: 20px;
-	right: 10px;
-	border-width: 6px;
-	border-style: solid;
-}
-.profile-wrapper::before {
-	content: '';
-	position: absolute;
-	top: 20px;
-	right: 10px;
-	border-color: #eee transparent transparent;
-	border-width: 6px;
-	border-style: solid;
-}
-.profile {
-	padding:10px;
-	border:1px solid yellow;
-	border-radius:3px;
-	box-shadow:0 1px 0 white inset, 0 1px 7px white;
-	background:white;
-}
-.profile:hover {
-	cursor:pointer;
-  color: yellow;
-}
-.profile .name {
-	font-size:20px;
-	color:black;
-	line-height:26px;
-	margin-left:10px;
-}
-
-.profile img {
-	width:30px;
-	display:inline;
-	float:left;
-	border:1px solid yellow;
-	border-radius:3px;
-}
-
-/* hide menu */
-.menu {
-	display:none;
-	clear:both;
-	margin:20px 0 0 0;
-}
-.menu li {
-	font-size:14px;
-	margin:0;
-  padding: 10px 4px;
-}
-.menu li a {
-	color:#555;
-}
-.menu li:hover > a{
-	color:black;
-}
-
-.menu li:hover{
-	border-left: 1px solid #111;
-  border-right: 1px solid #222;
-  border-bottom: 1px solid #222;
-  border-top: 1px solid #111;
-  border-radius: 3px;
-}
-
-/* hover profile show menu */
-.profile:hover .menu {
-	display:block;
-}
-</style>
 </body>
 </html>
 

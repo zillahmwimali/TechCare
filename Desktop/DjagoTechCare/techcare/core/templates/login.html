@@ -1,0 +1,117 @@
+
+
+<div class="fomu">
+    <center><h1>Login to TechCare</h1></center>
+<form method="POST">
+    {%csrf_token%} {{form.as_p}}
+    <center><button class="button" type="submit">Login</button></center>
+</form>
+</div>
+
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+.fomu{
+    font-family: 'Nunito', sans-serif;
+	margin: auto auto;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 550px;
+	height: 450px;
+ }
+ .fomu::before{
+    width: 100%;
+	height: 100%;
+	background-size: cover;
+	content: "";
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: block;
+	filter: blur(2px);
+ }
+.fomu:hover{
+   background: rgba(255, 255, 255, 0.659);
+}
+.reg{
+    font-weight: bold;
+    color: #112266;
+}
+.pic {
+    background-size: contain;
+    width: 100%;
+    height: 150px;
+    border-radius: 1%;
+}
+.button {
+    border-radius: 5px;
+    background-color: #112266;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 6px 15px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 4px;
+   }
+   .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   .button:hover{
+      background-color: #FFBB44;
+   }
+   .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+   }
+   .button:hover span {
+    padding-right: 25px;
+   }
+   .button:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
+select { 
+    height: 40px;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 20px;
+    transition: all 0.3 ease;
+    background-color: white;
+    border: solid 1px #112266;
+    margin: 12px auto;
+}
+input{
+    width: 100%;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.3 ease;
+    background-color: white;
+    border: solid 1px #112266;
+    margin: 12px auto;
+
+}
+input:focus{
+    background:#F1F1F1;
+}
+</style>
+

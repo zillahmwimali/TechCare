@@ -34,7 +34,7 @@ section{
     padding: 0 80px;
     margin: auto;
 }
-.about, .services, .skills, .teams, .contact, footer{
+.about{
     font-family: 'Nunito', sans-serif;
 }
 .about .about-content,
@@ -247,7 +247,7 @@ section .title::after{
 }
 
 /* responsive media query start */
-@media (max-width: 1104px) {
+@media (max-width: 1300px) {
     .home{
         background-image:url("/static/image/chw.jpg") no-repeat;
         background-size: cover;
@@ -257,6 +257,9 @@ section .title::after{
     .about .about-content .left img{
         height: 350px;
         width: 350px;
+    }
+    .login-btn{
+        display: none;
     }
 }
 
@@ -397,6 +400,26 @@ section .title::after{
     border-radius: 6px;
     border: 2px solid goldenrod;
     transition: all 0.3s ease;
+  }
+  .login-btn{
+    display: inline-block;
+    background: rgb(12, 12, 155);
+    color: goldenrod;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 6px 25px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid rgb(12, 12, 155);
+    transition: all 0.3s ease;
+    
+  }
+  .login-btn:hover{
+    color: whitesmoke;
+    background: goldenrod;
+    border: 2px solid goldenrod;
+
   }
   input[type="checkbox"]{
     display: none;

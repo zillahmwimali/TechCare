@@ -26,7 +26,4 @@ urlpatterns = [
     path ('event/',include('event.urls')),
     path ('contact/',include('contact.urls')),
 
-
-    
-
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

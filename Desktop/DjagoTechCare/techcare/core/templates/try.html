@@ -1,0 +1,105 @@
+{% load static%}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <!-- Glidejs -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css"
+    />
+    <!-- Custom StyleSheet -->
+    <link rel="stylesheet" href="{% static 'styles/try.css' %}"/>
+    <title>TechCare</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="home" class="header">
+      <!-- Navigation -->
+      <nav class="nav">
+        <div class="navigation container">
+          <div class="logo">
+            <img class="logo-image" src="{% static 'image/logo.png' %}" alt="logo"><a href="#home">Tech<span>Care</span></a>
+          </div>
+          <div class="menu">
+            <div class="top-nav">
+              <div class="logo">
+                <h1>Tech<span>Care</span></h1>
+              </div>
+              <div class="close">
+                <i class="fas fa-times"></i>
+              </div>
+            </div>
+
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="#home" class="nav-link scroll-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#blogs" class="nav-link scroll-link">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contacts" class="nav-link scroll-link">Contacts</a>
+              </li>
+              <li class="nav-item">
+                <a href="#faqs" class="nav-link scroll-link">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a href="/login" class=" scroll-link log">Login</a>
+              </li>
+            </ul>
+          </div>
+          
+
+          <div class="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+      <!-- Hero -->
+      <div class="hero">
+        <h1>Best of care,</h1>
+        <h1>Close to home</h1>
+        <h4 >Always caring and always here</h4>
+        <h4>We are committed to serving our communities</h4>
+
+        <a href="/doc">Get Started</a>
+      </div>
+
+      <img class="banner"  src="{% static 'images/bl.png' %}" width="200px" />
+
+      <div class="icons">
+        <span><i class="fab fa-facebook-f"></i></span>
+        <span><i class="fab fa-instagram"></i></span>
+        <span><i class="fab fa-twitter"></i></span>
+      </div>
+    </header>
+
+    
+    <!-- AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Typeit -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/7.0.4/typeit.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <!-- Glidejs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+    <!-- Custom Script -->
+    <script src="{% static 'js/try.js' %}"></script>
+  </body>
+</html>
