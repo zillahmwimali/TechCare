@@ -176,7 +176,8 @@ def refer_mother(request):
     return render(request,'mother_referral.html',{'form':form})
 
     
-
+def calender(request):
+    return render(request,'cal.html')
 
 
 

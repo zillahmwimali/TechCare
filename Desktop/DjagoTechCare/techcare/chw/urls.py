@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import child_assess, chwHouseholds,addHousehold,edit_household,general_assess,refer,follow_up,delete_referree,edit_referral,child_assess,mother_assess,refer_mother
+from .views import child_assess,calender, chwHouseholds,addHousehold,edit_household,general_assess,refer,follow_up,delete_referree,edit_referral,child_assess,mother_assess,refer_mother
 
 urlpatterns = [
     path('household/',chwHouseholds,name='household'),
@@ -13,6 +13,7 @@ urlpatterns = [
     path('child_assess/',child_assess,name='child_assess'),
     path('mother_assess/',mother_assess,name='mother_assess'),
     path('refer_mother/',refer_mother,name='refer_mother'),
+    path('cal/' , calender, name = 'cal'),
 
 
 ]
